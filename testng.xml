@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SeleniumTestSuite">
+    <test name="LoginTests">
+        <classes>
+            <class name="tests.LoginTest" />
+            <!-- Add more test classes here if needed -->
+        </classes>
+    </test>
+    <!-- Add more <test> elements for different test classes or groups -->
+</suite>
