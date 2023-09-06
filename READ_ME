@@ -1,0 +1,134 @@
+# Selenium Test Framework build in Java and using a Page Object Model(POM) Design
+
+## Overview
+
+This project is organized into the following directory structure:
+
+Simple:
+SeleniumTestFrameworkJavaPOM
+│
+├───.gitignore
+├───pom.xml
+├───SeleniumTestFrameworkJavaPOM.iml
+├───testng.xml
+│
+├───drivers
+│       chromedriver.exe
+│
+├───screenshots
+│
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   ├───config
+│   │   ├───locators
+│   │   ├───pages
+│   │   ├───testbase
+│   └───utils
+│
+├───test
+│   └───java
+│       ├───listeners
+│       ├───suites
+│       └───tests
+
+
+
+Extended:
++---SeleniumTestFrameworkJavaPOM
+|
+|   .gitignore
+|   pom.xml
+|   SeleniumTestFrameworkJavaPOM.iml
+|   testng.xml
+|
++---.idea
+|       .gitignore
+|       compiler.xml
+|       encodings.xml
+|       jarRepositories.xml
+|       misc.xml
+|       modules.xml
+|       vcs.xml
+|       workspace.xml
+|
++---drivers
+|       chromedriver.exe
+|
++---screenshots
++---src
+|   +---main
+|   |   +---java
+|   |   |   +---config
+|   |   |   |       AppConfig.java
+|   |   |   |
+|   |   |   +---locators
+|   |   |   |       LoginPageLocators.java
+|   |   |   |
+|   |   |   +---pages
+|   |   |   |       BasePage.java
+|   |   |   |       HomePage.java
+|   |   |   |       LoginPage.java
+|   |   |   |
+|   |   |   +---testbase
+|   |   |   |       BaseTest.java
+|   |   |   |
+|   |   |   \---utils
+|   |   |           DriverManager.java
+|   |   |           TestDataReader.java
+|   |   |
+|   |   \---resources
+|   |       \---testdata
+|   |               TestData.xlsx
+|   |
+|   \---test
+|       \---java
+|           +---listeners
+|           |       TestListeners.java
+|           |
+|           +---suites
+|           |       RegressionSuite.java
+|           |
+|           \---tests
+|                   HomePageTest.java
+|                   LoginTest.java
+|
++---target
+|   +---classes
+|   |   +---config
+|   |   |       AppConfig.class
+|   |   |
+|   |   +---locators
+|   |   |       LoginPageLocators.class
+|   |   |
+|   |   +---pages
+|   |   |       BasePage.class
+|   |   |       HomePage.class
+|   |   |       LoginPage.class
+|   |   |
+|   |   +---testbase
+|   |   |       BaseTest.class
+|   |   |
+|   |   +---testdata
+|   |   |       TestData.xlsx
+|   |   |
+|   |   \---utils
+|   |           DriverManager.class
+|   |           TestDataReader.class
+|   |
+|   +---generated-sources
+|   |   \---annotations
+|   +---generated-test-sources
+|   |   \---test-annotations
+|   \---test-classes
+|       +---listeners
+|       |       TestListeners.class
+|       |
+|       +---suites
+|       |       RegressionSuite.class
+|       |
+|       \---tests
+|               HomePageTest.class
+|               LoginTest.class
+|
+\---test-output
