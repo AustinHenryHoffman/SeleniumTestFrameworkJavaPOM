@@ -1,9 +1,6 @@
 package tests;
-import io.opentelemetry.semconv.resource.attributes.ResourceAttributes;
 import locators.LoginPageLocators;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -11,11 +8,18 @@ import pages.LoginPage;
 import testbase.BaseTest;
 import java.time.Duration;
 import org.testng.Assert;
+import utils.TestResultUtil;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void testLogin() {
+
+        //Specify test name to bass to TestResultUtil
+        String testName = "LoginTest"; // Specify your test name
+        // Create an instance of TestResultUtil
+        TestResultUtil testResultUtil = new TestResultUtil(driver,testName);
+
         // The driver is inherited from the BaseTest class, so it's already initialized
         // Navigating to test page.
         driver.get("https://demo.guru99.com/");
@@ -48,6 +52,15 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(user_id_text, "mngr526051");
         //wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
 
+        // At the end of your test, create a results directory and save a screenshot
+
+        String screenshotName = "screenshot"; // Specify a screenshot name
+
+        //Not needed because this directory is being definied in the log4j2.xml
+        // String resultsDir = testResultUtil.createResultsDirectory();
+
+        // Save a screenshot with the specified name
+        testResultUtil.saveScreenshot(screenshotName);
     }
 }
 
