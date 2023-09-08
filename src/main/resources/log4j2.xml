@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="30">
+    <Properties>
+        <Property name="logDirectory">${sys:logDirectory}</Property>
+        <Property name="logFilename">${logDirectory}/test.log</Property>
+    </Properties>
+
+    <Appenders>
+        <File name="File" fileName="${logDirectory}/test.log">
+            <PatternLayout pattern="%d %p %c{1.} [%t] %m%n" />
+        </File>
+    </Appenders>
+
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="File" />
+        </Root>
+    </Loggers>
+</Configuration>
