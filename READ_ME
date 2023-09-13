@@ -3,7 +3,6 @@
 ## Overview
 
 This project is organized into the following directory structure:
-
 Simple:
 SeleniumTestFrameworkJavaPOM
 │
@@ -55,7 +54,7 @@ Extended:
 +---drivers
 |       chromedriver.exe
 |
-+---screenshots
++---results
 +---src
 |   +---main
 |   |   +---java
