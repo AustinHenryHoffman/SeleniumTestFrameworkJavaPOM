@@ -2,6 +2,9 @@ package utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -25,10 +28,16 @@ public class TestResultUtil {
         // Create a unique directory for the test run
         resultsDirName = createResultsDirectory();
 
+        // Set the log file path programmatically
+        String logFilePath = resultsDirName + "/test.log";
+        System.setProperty("logFilePath", logFilePath);
+
         // Configure Log4j to use this directory for log files
         System.setProperty("logDirectory", resultsDirName);
-        //System.setProperty("logFilename", "test.log");
-        //Initialize logger after properties are set
+
+        // Debug statement to confirm the property value
+        //System.out.println("logDirectory property value: " + System.getProperty("logDirectory"));
+
         // Initialize logger after properties are set
         logger = LogManager.getLogger(TestResultUtil.class);
 
